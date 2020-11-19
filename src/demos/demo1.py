@@ -32,4 +32,39 @@ complexity.*
 """
 def find_rotation_point(surnames):
     # Your code here
-    pass
+    # Linear Search (Brute Force): O(n)
+    # set 2 indices n1 and n2 0 and 1 respectively
+    # iterate over the surnames list using a range based loop
+        # 
+        # check if surnames at index of n1 is greater than
+        # surnames at index n2
+            # return n2
+        
+        # increment n1
+        # and increment n2
+
+        # binary search: O(log n)
+        #  grab the first surname 
+        first_surname = surnames[0]
+        # set a min to 0
+        min = 0
+        # set our max to the length ofsurnames - 1
+        max = len(surnames) - 1
+        # while my min is less than my max
+        while min < max:
+            # guess the halfway point with normalization
+            guess = min + ((max - min) // 2)
+            # if our guess comes after our surname or is our surname
+            if surnames[guess] >= first_surname:
+                # go right
+                min = guess
+            
+            # otherwise
+            else:
+                # go left
+                max = guess
+            # if our min and max overlap / converge
+            if min + 1 == max:
+                # our max is alphabetically first
+                # so return our max
+                return max

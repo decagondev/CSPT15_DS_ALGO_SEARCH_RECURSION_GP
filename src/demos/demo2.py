@@ -48,14 +48,14 @@ def firstDraftWithTypo(n):
     return left
 
 # Aarons Version
-def firstDraftWithTypo(n):
-    start = 0
-    end = n
-    mid = 0
-    while start != end - 1:
-        mid = (start + end)//2
-        if containsTypo(mid):
-            end = mid
-        else:
-            start = mid
-    return end
+# def firstDraftWithTypo(n):
+#     start = 0
+#     end = n
+#     mid = 0
+#     while start != end - 1:
+#         mid = (start + end)//2
+#         if containsTypo(mid):
+#             end = mid
+#         else:
+#             start = mid
+#     return end
